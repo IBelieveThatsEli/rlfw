@@ -6,6 +6,6 @@ use linux as platform;
 pub use platform::App;
 
 #[allow(dead_code)]
-pub fn init() -> bool {
-    App::init().is_ok()
+pub fn init() -> Result<App, String> {
+    App::init()
 }
