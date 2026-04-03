@@ -1,5 +1,5 @@
-mod core;
-mod platform;
+pub mod core;
+pub mod platform;
 
 #[cfg(test)]
 mod tests {
@@ -9,8 +9,8 @@ mod tests {
     #[test]
     fn test_app() {
         let app = platform::init().unwrap();
-        let window = app.create_window(800, 600, "Window");
+        let window = app.create_window(800, 600, "Window").unwrap();
 
-        assert_eq!(window.is_ok(), true);
+        assert_eq!(window.should_close(), false);
     }
 }
