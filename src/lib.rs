@@ -9,7 +9,7 @@ mod tests {
     #[test]
     fn test_app() {
         let app = platform::init().unwrap();
-        let window = app.create_window(800, 600, "Window").unwrap();
+        let window = app.create_window(800, 600, "Window", None).unwrap();
 
         assert_eq!(window.should_close(), false);
     }

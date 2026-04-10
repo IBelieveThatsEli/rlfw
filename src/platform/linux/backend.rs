@@ -7,6 +7,7 @@ pub struct Backend {
     pub display: *mut Display,
     pub screen: c_int,
     pub wm_delete: c_ulong,
+    pub gl_context: Option<GLXContext>,
 }
 
 pub type SharedBackend = Arc<Mutex<Backend>>;
