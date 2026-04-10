@@ -142,6 +142,12 @@ impl IApp for App {
             Ok(out_window)
         }
     }
+
+    fn get_proc_address(&self, symbol: &str) -> *const c_void {
+        let c_str = CString::new(symbol).unwrap();
+
+        unsafe { glXGetProcAddress(c_str.as_ptr()) as *const c_void }
+    }
 }
 
 impl App {

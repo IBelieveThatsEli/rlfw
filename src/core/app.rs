@@ -10,4 +10,6 @@ pub trait App {
         title: &str,
         hints: Option<Hints>,
     ) -> Result<Box<dyn Window>, String>;
+
+    fn get_proc_address(&self, symbol: &str) -> *const std::ffi::c_void;
 }
